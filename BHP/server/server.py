@@ -7,7 +7,7 @@ def get_location_names():
     response = jsonify({
         'locations': util.get_location_names()
     })
-    response.headers.add('Access_Control_Allow_Origin', '*')
+    response.headers.add('Access-Control-Allow-Origin', '*')
 
     return response 
 
