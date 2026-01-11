@@ -7,8 +7,9 @@ def get_location_names():
     response = jsonify({
         'locations': util.get_location_names()
     })
-    print("LOCATIONS FROM REQUEST:", locations)
-    return jsonify({'locations': locations})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+
+    return response 
 
 @app.route('/predict-home-price', methods=['POST'])
 def predict_home_price():
